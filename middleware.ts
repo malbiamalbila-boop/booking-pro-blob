@@ -1,3 +1,0 @@
-import { NextResponse } from "next/server"; import type { NextRequest } from "next/server";
-export const config={matcher:["/((?!_next|api/healthz|favicon\\.ico).*)"]};
-export function middleware(req:NextRequest){ const a=req.headers.get("authorization")||""; const u=process.env.ADMIN_USER||""; const p=process.env.ADMIN_PASS||""; if(!u||!p) return NextResponse.next(); const token=a.split(" ")[1]||""; try{ const [uu,pp]=(token?atob(token):"").split(":"); if(uu===u&&pp===p) return NextResponse.next(); }catch{} return new NextResponse("Auth required",{status:401, headers:{"WWW-Authenticate":'Basic realm="Internal"'}});} 
