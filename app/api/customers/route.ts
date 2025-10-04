@@ -1,0 +1,3 @@
+import { NextResponse } from "next/server"; import { query } from "../../../lib/db"; export const runtime="nodejs";
+export async function GET(){ const {rows}=await query("select * from customers order by created_at desc limit 200"); return NextResponse.json(rows);} 
+export async function POST(req:Request){ const b=await req.json(); const {full_name,phone,email}=b; if(!full_name) return NextResponse.json({error:"full_name required"},{status:400}); const {rows}=await query("insert into customers(full_name, phone, email) values($1,$2,$3) returning *",[full_name,phone||null,email||null]); return NextResponse.json(rows[0],{status:201}); }
