@@ -1,0 +1,15 @@
+node_modules
+.next
+.env
+.env.local
+.env.*
+.vercel
+.DS_Store
+*.log
+coverage
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+
+# drizzle
+.drizzle

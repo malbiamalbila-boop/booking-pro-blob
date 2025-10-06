@@ -1,0 +1,15 @@
+{
+  "crons": [
+    { "path": "/api/cron/daily-ops", "schedule": "0 4 * * *" },
+    { "path": "/api/cron/cleaning-sync", "schedule": "*/15 * * * *" },
+    { "path": "/api/cron/weekly-utilization", "schedule": "0 2 * * 1" }
+  ],
+  "queues": {
+    "bindings": [
+      { "queue": "pdf_generation", "consumer": "/api/queues/pdf-generation" },
+      { "queue": "notifications", "consumer": "/api/queues/notifications" },
+      { "queue": "telematics_rules", "consumer": "/api/queues/telematics-rules" },
+      { "queue": "report_exports", "consumer": "/api/queues/report-exports" }
+    ]
+  }
+}

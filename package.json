@@ -2,31 +2,45 @@
   "name": "booking-pro-blob",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "vercel dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:push": "drizzle-kit push",
+    "seed": "tsx scripts/seed.ts",
+    "test": "vitest run"
   },
   "dependencies": {
+    "@auth/drizzle-adapter": "^0.8.0",
+    "@vercel/blob": "^0.27.0",
+    "@vercel/edge-config": "^1.1.0",
+    "@vercel/kv": "^1.0.1",
+    "@vercel/postgres": "^0.8.0",
+    "@vercel/queue": "^0.3.2",
+    "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
+    "drizzle-orm": "^0.31.2",
+    "lucide-react": "^0.441.0",
     "next": "14.2.4",
+    "next-auth": "^4.24.8",
+    "pino": "^9.3.2",
     "react": "18.3.1",
     "react-dom": "18.3.1",
-    "pg": "^8.11.5",
-    "@fullcalendar/react": "^6.1.14",
-    "@fullcalendar/daygrid": "^6.1.14",
-    "@fullcalendar/timegrid": "^6.1.14",
-    "@fullcalendar/interaction": "^6.1.14",
-    "node-ical": "^0.16.1",
-    "clsx": "^2.1.1",
-    "@vercel/blob": "^0.27.0"
+    "tailwind-merge": "^2.3.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
-    "typescript": "^5.4.5",
-    "@types/react": "^18.2.64",
     "@types/node": "^20.12.7",
-    "@types/pg": "^8.6.6",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
     "autoprefixer": "^10.4.19",
+    "drizzle-kit": "^0.26.5",
     "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.10"
+    "tailwindcss": "^3.4.10",
+    "tsx": "^4.11.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
   },
   "engines": {
     "node": ">=18"

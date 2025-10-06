@@ -1,17 +1,18 @@
+import "./globals.css";
+import { Inter } from "next/font/google";
+import type { Metadata } from "next";
 
-export const metadata = { title: "Booking Pro – Vercel Blob (public)" };
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+
+export const metadata: Metadata = {
+  title: "BookingPro Fleet Ops",
+  description: "Internal rental operations workspace",
+};
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="sv">
-      <body>
-        <main className="container">
-          <header className="flex items-center justify-between my-2">
-            <h1 className="text-2xl font-semibold">🚗 Booking Pro</h1>
-            <nav className="text-sm opacity-70">Intern biluthyrning</nav>
-          </header>
-          {children}
-        </main>
-      </body>
+    <html lang="en" className="min-h-full">
+      <body className={`${inter.variable}`}>{children}</body>
     </html>
   );
 }
