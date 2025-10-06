@@ -1,6 +1,4 @@
-import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import type { NextAuthOptions } from "next-auth";
-import EmailProvider from "next-auth/providers/email";
 import Credentials from "next-auth/providers/credentials";
 import { db } from "../db/client";
 import { users } from "../db/schema";
@@ -8,18 +6,11 @@ import { eq } from "drizzle-orm";
 import { randomUUID, createHash } from "crypto";
 
 export const authOptions: NextAuthOptions = {
-  adapter: DrizzleAdapter(db as any),
   session: { strategy: "jwt" },
   pages: {
     signIn: "/auth/sign-in",
   },
   providers: [
-    EmailProvider({
-      sendVerificationRequest: async ({ identifier, url }) => {
-        console.info("Magic link", { identifier, url });
-      },
-      from: "ops@bookingpro.local",
-    }),
     Credentials({
       name: "Credentials",
       credentials: {
