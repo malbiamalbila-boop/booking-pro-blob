@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { z } from "zod";
+import { z } from "@/lib/validation";
 import { db } from "@/lib/db/client";
 import { users, userRoles } from "@/lib/db/schema";
 import { createHash } from "crypto";

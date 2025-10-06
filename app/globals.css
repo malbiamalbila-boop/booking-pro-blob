@@ -9,7 +9,7 @@
 
 body {
   @apply min-h-screen bg-slate-50 text-slate-900 antialiased;
-  font-family: var(--font-sans, "Inter"), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Roboto", "Helvetica Neue", Arial, "Segoe UI", sans-serif;
 }
 
 .app-shell {

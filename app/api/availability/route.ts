@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { z } from "zod";
+import { z } from "@/lib/validation";
 import { db } from "@/lib/db/client";
 import { reservations, reservationItems, vehicles, vehicleClasses } from "@/lib/db/schema";
 import { and, eq, gte, lte, or } from "drizzle-orm";

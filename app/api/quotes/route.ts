@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { z } from "zod";
+import { z } from "@/lib/validation";
 import { db } from "@/lib/db/client";
 import { reservations, reservationItems, auditLogs } from "@/lib/db/schema";
 import { randomUUID } from "crypto";

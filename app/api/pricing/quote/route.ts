@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { z } from "zod";
+import { z } from "@/lib/validation";
 import { getPricingQuote } from "@/lib/pricing/engine";
 
 export const runtime = "nodejs";

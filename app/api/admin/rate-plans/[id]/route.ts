@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { z } from "zod";
+import { z } from "@/lib/validation";
 import { db } from "@/lib/db/client";
 import { ratePlans } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
